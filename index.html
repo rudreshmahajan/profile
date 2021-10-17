@@ -360,37 +360,18 @@
             
             
 		  
-		     <form action="#" method="post">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Enter Name"> <br>
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter Email"> <br>
-        <label for="message">Message</label>
-        <textarea  id="message" placeholder="Enter Message" rows="3"> </textarea>  <br>
-        <button type="submit" id="submit" onclick="sendEmail()"> Send Email </button>
-    </form>
-     <div id="response"></div>
-</body>
-<script>  
-function sendEmail() {
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
-    Email.send({
-        Host : "smtp.mailtrap.io",
-        Username : "projectno7777@gmail.com",
-        Password : "ncdosphkankaasyu",
-        To : 'projectno7777@gmail.com',
-        From : "projectno7777@gmail.com",
-        Subject : "Mail from website",
-        Body : finalmessage
-    }).then(
-      message => alert(message)
-    );
-}
-</script>
 
+
+
+<form method="post" action="contact.php">
+	<label for="name">Name:</label>
+	<input type="text" class="text" name="cf_name" id="name" />
+	<label for="email">email:</label>
+	<input type="text" class="text" name="cf_email" id="email" />
+	<label for="text">Message:</label>
+	<textarea class="text" name="cf_message" id="message"></textarea>
+	<input type="submit" class="submit" value="Send" />
+</form>
 
 
 
