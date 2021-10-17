@@ -37,9 +37,14 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://smtpjs.com/v3/smtp.js">
+	<script src="script.js">
 </script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_H0bNnngt4VrhttKoETS6K");
+})();
+</script>
   <!-- =======================================================
   * Template Name: MyResume - v4.3.0
   * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
@@ -395,82 +400,36 @@
 
 
 
+	         <div>				 
 					 
-					 
-		
-    <div class="form-container">
-      <form method="post" class="ui mini form">
-        <div class="ui inverted segment">
-          <div class="ui inverted form">
-            <div class="two fields">
-              <div class="field">
-                <label>First Name</label>
-                <input placeholder="First Name" type="text" id="firstname" />
-              </div>
-              <div class="field">
-                <label>Last Name</label>
-                <input placeholder="Last Name" type="text" id="lastname" />
-              </div>
-            </div>
-            <div class="two fields">
-              <div class="field">
-                <label>Contact Number</label>
-                <input placeholder="First Name" type="text" id="contactno" />
-              </div>
-              <div class="field">
-                <label>Email id</label>
-                <input placeholder="Last Name" type="text" id="emailid" />
-              </div>
-            </div>
+    <input type="text" id="toName">
+    <input type="text" id="fromName">
+    <input type="text" id="msg">
+    <button onclick='sendMail()'>send email</button>
+    		       
+			</div>			       
+					       
+					       
+		<script>
+			       function sendMail(params) {
 
-            <button
-              class="ui button"
-              type="button"
-              value="Send Email"
-              onclick="sendEmail()"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+var tempParams = {
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <!--For SMTP(Simple Mail Transfer Protocol)-->
-    
+from_name: document.getElementById("fromName").value, 
+to_name: document.getElementById("toName").value,
+message: document.getElementById("msg").value,
 
-
-<script>
-			   
-			   
-			   
-	function sendEmail() {
-    const firstname = document.getElementById('firstname').value
-    const lastname = document.getElementById('lastname').value
-    const contactno = document.getElementById('contactno').value
-    const emailid = document.getElementById('emailid').value
-    const details = `
-        Name: ${firstname} ${lastname}
-        Contact Number: ${contactno}
-        Email Id: ${emailid} 
-        `
-    Email.send({
-      Host: 'mail.smtp.host',
-      Username: 'project@gmail.com',
-      Password: 'ncdosphkankaasyu',
-      To: 'rudreshmahajan2@gmail.com',
-      From: 'projectno7777@gmail.com',
-      Subject: 'Sending Email using javascript',
-      Body: details,
-    }).then(function (message) {
-      alert('mail sent successfully')
-    })
-  }		   
-
+emailjs.send('gmail', 'template_159r6l5",tempParams) 
+.then(function(res){
+console.log("success", res.status);
+})
+}
+					       
 </script>
-
-
+			   					       
+					       
+					       
+					       
 
 <!-- End Contact Section -->
 
