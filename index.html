@@ -413,7 +413,7 @@ emailjs.init("user_H0bNnngt4VrhttKoETS6K");
 
  <div class="col-lg-8 mt-5 mt-lg-0">
 
-		 <form method="post" autocomplete="off" name="google-sheet">  
+		 <form calss="form" method="post" autocomplete="off" name="google-sheet">  
 
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -434,7 +434,8 @@ emailjs.init("user_H0bNnngt4VrhttKoETS6K");
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+             <div class="text-center"><button type="submit">Send Message</button></div>
+			 <input type="submit" value="Submit" id="btnsubmit" onclick="submitForm()">
                </form>
 
           </div>
@@ -443,30 +444,7 @@ emailjs.init("user_H0bNnngt4VrhttKoETS6K");
 
 
     
- <form method="post" autocomplete="off" name="google-sheet">
-  	<center><br><br>
-         <h1>Registration Form</h1><br>
-         <table border="5">	
-            
-             <tr><td><b>Name : </b></td>
-             <td><input type="text" name="Name"   required="" /></td>
-            </tr>
-            <tr><td><b>Email : </b></td>
-            <td><input type="text" name="Email"   required="" /></td>
-            </tr>
-            <tr><td><b>Phone no. : </b></td>
-            <td><input type="number" name="Phone"   required="" /></td>
-            </tr>
-            <tr><td><b>Gender : </b></td>
-             <td><input type="radio"  name="Gender" value="male" >male
-            <input type="radio"  name="Gender" value="female"  >female<br/></td>
-             </tr>
-           
-         </table>
-         <br><br>
-         <input type="submit" name="submit" value="Submit"/>
-    </center>
-  </form>
+
 
   <script type="text/javascript">
 
@@ -480,6 +458,18 @@ emailjs.init("user_H0bNnngt4VrhttKoETS6K");
                 .then(response => alert("You have successfully submitted."))
                 .catch(error => console.error('Error!', error.message))
             })
+	  
+	  
+	  function submitForm() {
+   // Get the first form with the name
+   // Usually the form name is not repeated
+   // but duplicate names are possible in HTML
+   // Therefore to work around the issue, enforce the correct index
+   var frm = document.getElementsByName('form')[0];
+   frm.submit(); // Submit the form
+   frm.reset();  // Reset all form data
+   return false; // Prevent page refresh
+}
   </script>
 
            
