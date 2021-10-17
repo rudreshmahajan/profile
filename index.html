@@ -359,69 +359,37 @@
             
             
             
-            		<div class="container-fluid">
-			<div class ="Contact" id="ContactLink">
-				<h2 class="text-center large-gray-font">Contact</h2>
-				
-				<br/>
-				<br/>
-				
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							<form class="form-horizontal" role="form" method="post" action="index.php">
-								<div class="form-group">
-									<label for="name" class="col-sm-2 control-label">Name</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
-										<?php echo "<p class='text-danger'>$errName</p>";?>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="email" class="col-sm-2 control-label">Email</label>
-									<div class="col-sm-10">
-										<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
-										<?php echo "<p class='text-danger'>$errEmail</p>";?>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="message" class="col-sm-2 control-label">Message</label>
-									<div class="col-sm-10">
-										<textarea class="form-control" rows="4" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
-										<?php echo "<p class='text-danger'>$errMessage</p>";?>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
-										<?php echo "<p class='text-danger'>$errHuman</p>";?>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-10 col-sm-offset-2">
-										<input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-10 col-sm-offset-2">
-										<?php echo $result; ?>	
-									</div>
-								</div>
-							</form> 
-						</div> <!-- ending div for contact form-->
-					</div><!-- ending div for container-->
-				</div><!-- ending div for row -->
-			</div><!-- ending div for contact -->		
-		</div><!-- ending div for contact container-->
-		
-		
-
-		<!--Bootstrap Js CDN-->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-
+		  
+		     <form action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter Name"> <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter Email"> <br>
+        <label for="message">Message</label>
+        <textarea  id="message" placeholder="Enter Message" rows="3"> </textarea>  <br>
+        <button type="submit" id="submit" onclick="sendEmail()"> Send Email </button>
+    </form>
+     <div id="response"></div>
+</body>
+<script>  
+function sendEmail() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let finalmessage = `Name : ${name} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+    Email.send({
+        Host : "smtp.mailtrap.io",
+        Username : "projectno7777@gmail.com",
+        Password : "ncdosphkankaasyu",
+        To : 'projectno7777@gmail.com',
+        From : "projectno7777@gmail.com",
+        Subject : "Mail from website",
+        Body : finalmessage
+    }).then(
+      message => alert(message)
+    );
+}
+</script>
 
 
 
