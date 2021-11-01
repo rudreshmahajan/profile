@@ -466,33 +466,76 @@ I am a passionate individual who if given a chance would be comfortable with any
 		  
 		  
 		  
-		  
-		   <div class="col-lg-8 mt-5 mt-lg-0">
+		 <section id="CONTACT" class="contact">
+      <div class="container">
 
-		 <form calss="form" method="POST"   class="php-email-form" data-netlify="true">  
+        <div class="section-title">
+          <h2>CONTACT</h2>
+          
+        </div>
+        <br>
 
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Gurudvara Chauk  </p>
               </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>jitusavdekar1996@gmail.com</p>
               </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+918830012216</p>
               </div>
-                 <div class="form-group mt-3"><button type="submit" >Send Message</button></div>
-			
-               </form>
 
           </div>
 
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form name="sentMessage" method="POST"   class="php-email-form" data-netlify="true">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validate"></div>
+              </div>
+             
+              <div class="text-center "><button type="submit" class="btn btn-success">Send Message</button></div>
+            </form>
+          </div>
+
         </div>
-		  
+
+      </div>
+    </section><!-- End Contact Section -->
+<br>
+<br>
 		  
 		  
 		  
